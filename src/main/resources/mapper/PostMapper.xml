@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.PostMapper">
+
+    <select id="countAll" resultType="int">
+        SELECT COUNT(*)
+        FROM post
+    </select>
+
+    <select id="findAllpaged" resultType="Post">
+        SELECT
+            p.post_id,
+            p.member_id,
+            p.title,
+            p.content,
+            p.created_at,
+            m.name AS writer_name
+        FROM post p
+        JOIN member m ON p.member_id = m.member_id
+        ORDER BY p.post_id DESC
+        LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <!-- 상세 조회 -->
+    <select id="findById" resultType="Post">
+        SELECT
+            p.post_id,
+            p.member_id,
+            p.title,
+            p.content,
+            p.created_at,
+            m.name AS writer_name
+        FROM post p JOIN member m ON p.member_id = m.member_id
+        WHERE p.post_id = #{postId}
+    </select>
+
+    <!-- 등록 -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="postId">
+        INSERT INTO post (member_id, title, content)
+        VALUES (#{memberId}, #{title}, #{content})
+    </insert>
+
+    <!-- 수정 -->
+    <update id="update">
+        UPDATE post
+        SET title = #{title},
+            content = #{content}
+        WHERE post_id = #{postId}
+    </update>
+
+    <!-- 삭제 -->
+    <delete id="delete">
+        DELETE FROM post
+        WHERE post_id = #{postId}
+    </delete>
+
+    <!-- 검색 조건 공통 (재사용) -->
+    <sql id="searchCondition">
+        <if test="keyword != null and keyword != ''">
+            <choose>
+                <when test="type == 'writer'">
+                    AND m.name LIKE CONCAT('%', #{keyword}, '%')
+                </when>
+                <otherwise>
+                    AND p.title LIKE CONCAT('%', #{keyword}, '%')
+                </otherwise>
+            </choose>
+        </if>
+    </sql>
+
+    <select id="countBySearch" resultType="int">
+        SELECT COUNT(*)
+        FROM post p JOIN member m ON p.member_id = m.member_id
+        WHERE 1=1
+        <include refid="searchCondition"/>
+    </select>
+
+    <select id="findBySearchPaged" resultType="Post">
+        SELECT
+            p.post_id,
+            p.member_id,
+            p.title,
+            p.content,
+            p.created_at,
+            m.name AS writer_name
+        FROM post p JOIN member m ON p.member_id = m.member_id
+        WHERE 1=1
+        <include refid="searchCondition"/>
+        ORDER BY p.post_id DESC
+        LIMIT #{size} OFFSET #{offset}
+    </select>
+
+</mapper>

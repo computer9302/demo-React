@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace = Mapper 인터페이스 전체 경로 -->
+<mapper namespace="com.example.demo.MemberMapper">
+
+    <!-- id = 인터페이스 메서드 이름 -->
+    <!-- resultType = 반환 타입 (별칭 패키지 덕분에 Member만 써도 됨) -->
+    <select id="findByLoginId" resultType="Member">
+        SELECT
+            MEMBER_ID,
+            LOGIN_ID,
+            PASSWORD,
+            NAME,
+            CREATED_AT
+        FROM MEMBER
+        WHERE LOGIN_ID = #{loginId}
+    </select>
+
+    <select id="countByLoginId" resultType="int">
+        SELECT COUNT(*)
+        FROM member
+        WHERE login_id = #{loginId}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO member (login_id, password, name)
+        VALUES (#{loginId}, #{password}, #{name})
+    </insert>
+</mapper>
