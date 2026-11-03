@@ -1,6 +1,6 @@
 # Demo - React - 회원·게시판 프로젝트
 
-Spring Boot + MyBatis + JSP 기반 게시판 프로젝트입니다.
+Spring Boot + MyBatis + React 기반 게시판 프로젝트입니다.
 
 ## 기술 스택
 - Java 17, Spring Boot, MyBatis
