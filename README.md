@@ -1,4 +1,4 @@
-# Demo - 회원·게시판 프로젝트
+# Demo - React - 회원·게시판 프로젝트
 
 Spring Boot + MyBatis + JSP 기반 게시판 프로젝트입니다.
 
