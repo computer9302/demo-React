@@ -5,8 +5,8 @@ Spring Boot + MyBatis + JSP 기반 게시판 프로젝트입니다.
 ## 기술 스택
 - Java 17, Spring Boot, MyBatis
 - MySQL
-- HTML, JSP, JSTL, JavaScript (AJAX)
-- Bootstrap 5
+- React, JavaScript, React Router
+- Vite
 
 ## 주요 기능
 - 회원 로그인 / 회원가입 (BCrypt, 아이디 중복확인 AJAX)
