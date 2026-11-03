@@ -9,10 +9,10 @@ Spring Boot + MyBatis + JSP 기반 게시판 프로젝트입니다.
 - Vite
 
 ## 주요 기능
-- 회원 로그인 / 회원가입 (BCrypt, 아이디 중복확인 AJAX)
+- 회원 로그인 / 회원가입 / 로그아웃 (Bcrypt, 세션 기반 인증)
 - 게시글 CRUD, 페이징, 검색
-- 댓글 (1:N), AJAX 등록·삭제
-- 세션 기반 로그인
+- 게시글 상세 및 댓글 (1:N)·등록·삭제
+- React SPA와 Spring Boot REST API 연동 (CORS, 세션 쿠기)
 
 ## 기능 화면
 - 로그인
