@@ -16,22 +16,29 @@ Spring Boot + MyBatis + React 기반 게시판 프로젝트입니다.
 
 ## 기능 화면
 - 로그인
-  <img width="1022" height="418" alt="image" src="https://github.com/user-attachments/assets/365695b4-e78f-4d9f-814f-248dec26a10e" />
 
-- 회원가입 + 중복확인
-  <img width="1037" height="455" alt="image" src="https://github.com/user-attachments/assets/f2a96719-4b72-4b58-962d-05d60ecfe069" />
+  <img width="745" height="263" alt="image" src="https://github.com/user-attachments/assets/43731569-5284-408c-a0fa-c03c9672d08e" />
 
-- 메인
-  <img width="1034" height="314" alt="image" src="https://github.com/user-attachments/assets/f2ed5bd9-a6f8-4d92-b6fa-c2ba7aa8acd3" />
+
+- 회원가입
+
+  <img width="799" height="323" alt="image" src="https://github.com/user-attachments/assets/21cee00b-7720-47d3-a534-09a0a2c2ded1" />
+
 
 - 게시글 목록 + 페이징
-  <img width="1019" height="616" alt="image" src="https://github.com/user-attachments/assets/79fb0300-672f-47ab-9dc1-0153c2b345c1" />
+
+  <img width="932" height="488" alt="image" src="https://github.com/user-attachments/assets/809779ea-1efc-4584-a8e8-e63ea2f68a36" />
+
 
 - 게시글 상세 + 댓글
-  <img width="1019" height="530" alt="image" src="https://github.com/user-attachments/assets/70d2b954-4f7f-4fe3-971f-c5fab9df4660" />
+
+  <img width="871" height="425" alt="image" src="https://github.com/user-attachments/assets/ce64f973-25f7-4aed-b9c2-d9dc1481987f" />
+
 
 - 검색 결과
-  <img width="1009" height="577" alt="image" src="https://github.com/user-attachments/assets/381a6be8-1559-4784-b1fe-021a49166e2a" />
+
+  <img width="770" height="291" alt="image" src="https://github.com/user-attachments/assets/28e887f6-e780-4d26-ac27-4263408eff43" />
+
 
 ## ERD
 <img width="815" height="415" alt="image" src="https://github.com/user-attachments/assets/dbde0f54-a8f3-416c-b585-8bb77c0b2fb5" />
